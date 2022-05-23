@@ -15,12 +15,31 @@ app.use(express.static("public")); //Use this so express generats the html + css
 // })
 
 //SocketIO part
+//On Disconnet
+// io.on('connection', (socket)=>{
+//     console.log('A user connected.');
+//     socket.on('disconnect', () =>{
+//         console.log('User Disconnected!.')
+//     })
+// })
+
+//On Chat message
 io.on('connection', (socket)=>{
-    console.log('A user connected.');
-    socket.on('disconnect', () =>{
-        console.log('User Disconnected!.')
+    socket.on('chat message', (msg) =>{
+        console.log(`This is the msg: ${msg}`)
     })
 })
+
+io.on('connection', (socket) => {
+    socket.broadcast.emit('hi');
+  });
+
+  io.emit("hello", "world");
+
+// io.emit('some event', {
+//      someProperty: 'some value', 
+//      otherProperty: 'other value' 
+//     }); // This will emit the event to all connected sockets
 
 // carry on on:
 // https://socket.io/get-started/chat
