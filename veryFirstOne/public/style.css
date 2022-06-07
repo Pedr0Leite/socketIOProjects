@@ -51,4 +51,26 @@ body {
 
 #messages>li:nth-child(odd) {
       background: #efefef;
+      color: #fff;
+}
+
+.div-chat0 {
+      background-color: blue;
+      color: #fff;
+      padding: 0.5rem 1rem;
+}
+.div-chat1 {
+      background-color: orange;
+      color: #fff;
+      padding: 0.5rem 1rem;
+}
+.div-chat2 {
+      background-color: purple;
+      color: #fff;
+      padding: 0.5rem 1rem;
+}
+.div-chat3 {
+      background-color: greenyellow;
+      color: #fff;
+      padding: 0.5rem 1rem;
 }
